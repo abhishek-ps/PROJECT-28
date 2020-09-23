@@ -7,14 +7,15 @@ class Stone{
             'density':1.2,
     }
         this.body = Bodies.circle(x,y,radius,options);
-        this.body.x=x;
-        this.body.y=y;
-        this.image=loadImage("Plucking mangoes/stone.png");
+        this.x=x;
+        this.y=y;
+        this.radius = radius;
+        this.image=loadImage("stone.png");
         World.add(world,this.body);
     }
     display(){
         var pos =this.body.position;
-        image(this.image, 0, 0, this.width, this.height);
+        image(this.image, this.x, this.y, this.radius, this.radius);
         }
     }
                    

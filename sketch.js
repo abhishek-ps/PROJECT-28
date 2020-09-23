@@ -10,19 +10,20 @@ var boy,boyImg;
 
 function preload()
 {
-	boyImg=loadImage("Plucking mangoes/boy.png");
+	boyImg=loadImage("boy.png");
 }
 
 function setup() {
 	createCanvas(800, 700);
-	background(255);
 
 	engine = Engine.create();
 	world = engine.world;
 
 	ground=new Ground(200,200,800,10);
-	stone=new Stone(200,300);
+	stone=new Stone(200,300,25);
 	boy=createSprite(50,100,0,0);
+	boy.scale = 0.1;
+	
 
 
 
@@ -32,11 +33,11 @@ function setup() {
 
 
 function draw() {
-  rectMode(CENTER);
   background(0);
   ground.display();
   stone.display();
-  boy.display();
+  boy.addImage(boyImg);
+  drawSprites();
 }
 
 
